@@ -22,17 +22,15 @@ import { EmailModule } from './email/email.module';
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
+
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: Number(process.env.DB_PORT),
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      url: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      autoLoadEntities: true,
       synchronize: true,
-      dropSchema: false,
-      entities: [User, Lead, PipelineStage, Pipeline, Activity],
-      logging: ['error', 'warn']
     }),
     TypeOrmModule.forFeature([Lead, User, PipelineStage, Pipeline, Activity]),
     LeadModule,
