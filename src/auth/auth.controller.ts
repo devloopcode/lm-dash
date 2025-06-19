@@ -10,11 +10,10 @@ import { AuthGuard } from '@nestjs/passport';
 export class AuthController {
   constructor(private authService: AuthService) { }
 
-  // @UseGuards(JwtAuthGuard)
-  @UseGuards(AuthGuard)
+  @UseGuards(JwtAuthGuard)
   @Get('status')
-  checkStatus(@Req() req: Request) {
-    return { authenticated: true, user: req['user'] };
+  checkStatus(@Req() req) {
+    return { authenticated: true, user: req.user };
   }
 
   @Post('login')
