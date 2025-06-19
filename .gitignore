@@ -16,7 +16,7 @@ node_modules/
 .eslintcache
 
 # Compiled output
-# /dist/
+/dist/
 /build/
 
 # Testing
