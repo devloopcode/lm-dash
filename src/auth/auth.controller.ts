@@ -27,8 +27,8 @@ export class AuthController {
     return await this.authService.registerUser(registerDto, res);
   }
 
-  @Post('refresh')
   @UseGuards(AuthGuard('jwt-refresh'))
+  @Post('refresh')
   async refresh(@Req() req: Request, @Res() res: Response) {
     return await this.authService.refreshTokens(req, res);
   }
