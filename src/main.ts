@@ -11,7 +11,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   app.enableCors({
-    origin: 'https://lead-react-deploy.vercel.app',
+    origin: ['https://lead-react-deploy.vercel.app', 'http://localhost:5000'],
     credentials: true,
   });
   await app.listen(PORT, () => Logger.log(`The server is running on port : ${PORT}`));

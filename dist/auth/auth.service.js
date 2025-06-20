@@ -73,13 +73,13 @@ let AuthService = class AuthService {
             await this.updateRefreshToken(user.id, tokens.refreshToken);
             res.cookie(shared_1.ACCESS_TOKEN_NAME, tokens.accessToken, {
                 httpOnly: true,
-                sameSite: 'strict',
+                sameSite: 'none',
                 secure: process.env.NODE_ENV === 'production',
                 maxAge: 15 * 60 * 1000,
             });
             res.cookie(shared_1.REFRESH_TOKEN_NAME, tokens.refreshToken, {
                 httpOnly: true,
-                sameSite: 'strict',
+                sameSite: 'none',
                 secure: process.env.NODE_ENV === 'production',
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
@@ -127,13 +127,13 @@ let AuthService = class AuthService {
             await this.updateRefreshToken(newUser.id, tokens.refreshToken);
             res.cookie(shared_1.ACCESS_TOKEN_NAME, tokens.accessToken, {
                 httpOnly: true,
-                sameSite: 'strict',
+                sameSite: 'none',
                 secure: process.env.NODE_ENV === 'production',
                 maxAge: 15 * 60 * 1000,
             });
             res.cookie(shared_1.REFRESH_TOKEN_NAME, tokens.refreshToken, {
                 httpOnly: true,
-                sameSite: 'strict',
+                sameSite: 'none',
                 secure: process.env.NODE_ENV === 'production',
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
@@ -171,13 +171,13 @@ let AuthService = class AuthService {
             await this.updateRefreshToken(user.id, tokens.refreshToken);
             res.cookie(shared_1.ACCESS_TOKEN_NAME, tokens.accessToken, {
                 httpOnly: true,
-                sameSite: 'strict',
+                sameSite: 'none',
                 secure: process.env.NODE_ENV === 'production',
                 maxAge: 15 * 60 * 1000,
             });
             res.cookie(shared_1.REFRESH_TOKEN_NAME, tokens.refreshToken, {
                 httpOnly: true,
-                sameSite: 'strict',
+                sameSite: 'none',
                 secure: process.env.NODE_ENV === 'production',
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });

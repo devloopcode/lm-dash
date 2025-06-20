@@ -13,7 +13,7 @@ async function bootstrap() {
     app.use((0, cookie_parser_1.default)());
     app.useGlobalPipes(new common_1.ValidationPipe());
     app.enableCors({
-        origin: 'http://localhost:5000',
+        origin: 'https://lead-react-deploy.vercel.app',
         credentials: true,
     });
     await app.listen(PORT, () => common_1.Logger.log(`The server is running on port : ${PORT}`));

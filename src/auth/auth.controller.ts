@@ -13,6 +13,8 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Get('status')
   checkStatus(@Req() req) {
+    console.log(req);
+
     return { authenticated: true, user: req.user };
   }
 

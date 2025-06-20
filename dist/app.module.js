@@ -32,15 +32,12 @@ exports.AppModule = AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: process.env.DB_HOST,
-                port: Number(process.env.DB_PORT),
-                username: process.env.DB_USER,
-                password: process.env.DB_PASSWORD,
-                database: process.env.DB_NAME,
+                url: process.env.DATABASE_URL,
+                ssl: {
+                    rejectUnauthorized: false,
+                },
+                autoLoadEntities: true,
                 synchronize: true,
-                dropSchema: false,
-                entities: [user_entity_1.User, lead_entity_1.Lead, pipeline_stage_entity_1.PipelineStage, pipeline_entity_1.Pipeline, activity_entity_1.Activity],
-                logging: ['error', 'warn']
             }),
             typeorm_1.TypeOrmModule.forFeature([lead_entity_1.Lead, user_entity_1.User, pipeline_stage_entity_1.PipelineStage, pipeline_entity_1.Pipeline, activity_entity_1.Activity]),
             lead_module_1.LeadModule,
