@@ -39,14 +39,14 @@ export class AuthService {
       // Set tokens as httpOnly cookies
       res.cookie(ACCESS_TOKEN_NAME, tokens.accessToken, {
         httpOnly: true,
-        sameSite: 'strict',
+        // sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: 15 * 60 * 1000, // 15 minutes
       });
 
       res.cookie(REFRESH_TOKEN_NAME, tokens.refreshToken, {
         httpOnly: true,
-        sameSite: 'strict',
+        // sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
@@ -111,14 +111,14 @@ export class AuthService {
       // Set tokens as httpOnly cookies
       res.cookie(ACCESS_TOKEN_NAME, tokens.accessToken, {
         httpOnly: true,
-        sameSite: 'strict',
+        // sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: 15 * 60 * 1000, // 15 minutes
       });
 
       res.cookie(REFRESH_TOKEN_NAME, tokens.refreshToken, {
         httpOnly: true,
-        sameSite: 'strict',
+        // sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
@@ -172,14 +172,14 @@ export class AuthService {
       // Set new tokens as cookies
       res.cookie(ACCESS_TOKEN_NAME, tokens.accessToken, {
         httpOnly: true,
-        sameSite: 'strict',
+        // sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: 15 * 60 * 1000, // 15 minutes
       });
 
       res.cookie(REFRESH_TOKEN_NAME, tokens.refreshToken, {
         httpOnly: true,
-        sameSite: 'strict',
+        // sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
